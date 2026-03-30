@@ -82,7 +82,17 @@ This starter is already wired for Pages, but the repository still has to be enab
 2. Confirm `.github/workflows/deploy.yml` is present in the new repo.
 3. In GitHub, open **Settings** -> **Pages** and enable GitHub Pages for the repository.
 4. If GitHub asks for a deployment source, use **GitHub Actions** so the included deploy workflow can publish the `dist/` artifact.
-5. After the first merge to `main`, verify the Pages workflow runs and the site publishes successfully.
+5. Make sure Pages is actually using the workflow-based source, not the legacy branch build path. If `build_type` stays on `legacy`, Pages serves the repository root `index.html` instead of the built `dist/` artifact, which usually shows up as a white screen and a browser error trying to load `/src/main.tsx` on the live site.
+6. If that setting gets stuck on the wrong mode, switch it to **GitHub Actions** in the repository settings, or update it through the API:
+
+   ```bash
+   gh api -X PUT repos/OWNER/REPO/pages \
+     -f build_type=workflow \
+     -f source[branch]=main \
+     -f source[path]=/
+   ```
+
+7. After the first merge to `main`, verify the Pages workflow runs and the site publishes successfully. If you had to change the Pages source after an earlier failed publish, rerun `.github/workflows/deploy.yml` so Pages republishes the built artifact.
 
 ## 6. Validate before opening the PR
 
