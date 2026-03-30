@@ -9,6 +9,10 @@ describe('App', () => {
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'SPA Starter' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'View source on GitHub' })).toHaveAttribute(
+      'href',
+      'https://github.com/mattgotteiner/spa-starter',
+    )
     expect(screen.getByText(/start with a finished-looking workspace/i)).toBeInTheDocument()
     expect(screen.getByText(/use this for output, guidance, or preview/i)).toBeInTheDocument()
   })
