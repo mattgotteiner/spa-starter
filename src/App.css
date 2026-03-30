@@ -18,7 +18,7 @@
 
 .app-subtitle-link {
   align-items: center;
-  color: var(--color-text-muted);
+  color: var(--spa-color-text-muted);
   display: inline-flex;
   flex-shrink: 0;
   justify-content: center;
@@ -27,7 +27,7 @@
 
 @media (hover: hover) {
   .app-subtitle-link:hover {
-    color: var(--color-text);
+    color: var(--spa-color-text);
   }
 }
 
@@ -39,8 +39,8 @@
 }
 
 .app-layout .spa-panel {
-  background-color: var(--color-surface-elevated);
-  border-color: var(--color-border);
+  background-color: var(--spa-color-surface-elevated);
+  border-color: var(--spa-color-border);
 }
 
 .starter-panel {
@@ -50,7 +50,7 @@
 }
 
 .starter-panel__eyebrow {
-  color: var(--color-text-muted);
+  color: var(--spa-color-text-muted);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -66,7 +66,7 @@
 
 .starter-panel__body,
 .starter-panel__list {
-  color: var(--color-text-secondary);
+  color: var(--spa-color-text-secondary);
   margin: 0;
 }
 
@@ -98,14 +98,14 @@
 }
 
 .starter-summary__card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background-color: var(--spa-color-surface);
+  border: 1px solid var(--spa-color-border);
   border-radius: 12px;
   padding: 0.9rem 1rem;
 }
 
 .starter-summary__label {
-  color: var(--color-text-muted);
+  color: var(--spa-color-text-muted);
   display: block;
   font-size: 0.78rem;
   font-weight: 700;
@@ -115,12 +115,12 @@
 }
 
 .starter-summary__value {
-  color: var(--color-text);
+  color: var(--spa-color-text);
   font-weight: 600;
 }
 
 .starter-summary__hint {
-  color: var(--color-text-secondary);
+  color: var(--spa-color-text-secondary);
   font-size: 0.95rem;
   margin: 0.35rem 0 0;
 }

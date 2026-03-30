@@ -23,7 +23,7 @@ function AppContent(): React.ReactElement {
   const starterChecklist = useMemo(
     () => [
       'Swap the primary and secondary panels for your real UI.',
-      'Add your own settings fields in src/types and src/hooks/useSettings.ts.',
+      'Wire app-wide appearance settings through spa-ui-controls instead of inventing a custom palette.',
       'Update the title, manifest, icons, and README for the new app.',
     ],
     [],
@@ -72,11 +72,11 @@ function AppContent(): React.ReactElement {
             <div className="starter-panel">
               <p className="starter-panel__eyebrow">Primary panel</p>
               <h2 className="starter-panel__title">Start with a finished-looking workspace</h2>
-              <p className="starter-panel__body">
-                This panel is the place to drop your main interaction surface. The starter already
-                gives you theme wiring, settings persistence, and a layout that is pleasant enough
-                to iterate on immediately.
-              </p>
+               <p className="starter-panel__body">
+                 This panel is the place to drop your main interaction surface. The starter already
+                 gives you shared theme wiring, settings persistence, and a layout that is pleasant
+                 enough to iterate on immediately.
+               </p>
 
               <div className="starter-panel__example">
                 <strong>Starter prompt</strong>
@@ -126,10 +126,11 @@ function AppContent(): React.ReactElement {
                 </section>
 
                 <section className="starter-summary__card">
-                  <span className="starter-summary__label">Accent preset</span>
-                  <div className="starter-summary__value">{settings.accentPreset}</div>
+                  <span className="starter-summary__label">Color scheme</span>
+                  <div className="starter-summary__value">spa-ui-controls</div>
                   <p className="starter-summary__hint">
-                    Example select input persisted through the starter settings stack.
+                    The starter consumes the shared library tokens instead of defining its own app
+                    palette.
                   </p>
                 </section>
 

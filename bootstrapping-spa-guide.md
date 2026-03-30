@@ -48,6 +48,11 @@ If the new app changes the settings model, continue through:
 - `src/components/SettingsPanel/SettingsPanel.tsx`
 - `src/components/SettingsSidebar/SettingsSidebar.tsx`
 
+For rollout and theming consistency:
+
+- Use the color scheme and shared design tokens from `@mattgotteiner/spa-ui-controls`; do not invent a separate app palette in `src/index.css` or component styles.
+- If the app has appearance settings that the control library supports, wire those settings into `ThemeProvider`, `ThemeToggle`, or related `@mattgotteiner/spa-ui-controls` primitives instead of maintaining a parallel theme system.
+
 ## 4. Create the app logo and PWA icons
 
 Do not leave the starter icon set in place for a real app.

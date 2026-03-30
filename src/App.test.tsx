@@ -25,7 +25,6 @@ describe('App', () => {
 
     expect(screen.getByRole('dialog', { name: 'Settings' })).toBeInTheDocument()
     expect(screen.getByLabelText('App title')).toBeInTheDocument()
-    expect(screen.getByLabelText('Accent preset')).toBeInTheDocument()
     expect(screen.getByLabelText('Light')).toBeInTheDocument()
     expect(screen.getByLabelText('Dark')).toBeInTheDocument()
     expect(screen.getByLabelText('System')).toBeInTheDocument()
@@ -36,7 +35,6 @@ describe('App', () => {
       APP_SETTINGS_STORAGE_KEY,
       JSON.stringify({
         ...DEFAULT_SETTINGS,
-        accentPreset: 'emerald',
         appTitle: 'Persisted Starter',
         showHelpfulHints: false,
         theme: 'dark',
@@ -46,7 +44,7 @@ describe('App', () => {
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Persisted Starter' })).toBeInTheDocument()
-    expect(screen.getByText('emerald')).toBeInTheDocument()
+    expect(screen.getByText('spa-ui-controls')).toBeInTheDocument()
     expect(screen.getByText('Disabled')).toBeInTheDocument()
   })
 })
