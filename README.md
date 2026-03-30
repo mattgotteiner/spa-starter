@@ -26,6 +26,10 @@ npm run dev
 
 Then open the Vite URL and replace the starter panels with your app.
 
+## Bootstrapping a new repo
+
+If you're turning this starter into a brand-new GitHub repository, follow `bootstrapping-spa-guide.md` for the full sequence. It covers the repo setup flow, app rebranding, GitHub Pages enablement, and regenerating the favicon/PWA icon set.
+
 ## What to customize first
 
 ### App title and shell copy
