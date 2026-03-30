@@ -13,7 +13,6 @@ describe('useSettings', () => {
 
     expect(result.current.settings.appTitle).toBe('SPA Starter')
     expect(result.current.settings.theme).toBe('system')
-    expect(result.current.settings.accentPreset).toBe('indigo')
     expect(result.current.settings.showHelpfulHints).toBe(true)
   })
 
@@ -22,7 +21,6 @@ describe('useSettings', () => {
 
     act(() => {
       result.current.updateSettings({
-        accentPreset: 'emerald',
         appTitle: 'Saved title',
         showHelpfulHints: false,
         theme: 'dark',
@@ -31,7 +29,6 @@ describe('useSettings', () => {
 
     const persisted = JSON.parse(window.localStorage.getItem(APP_SETTINGS_STORAGE_KEY) ?? '{}')
 
-    expect(persisted.accentPreset).toBe('emerald')
     expect(persisted.appTitle).toBe('Saved title')
     expect(persisted.showHelpfulHints).toBe(false)
     expect(persisted.theme).toBe('dark')

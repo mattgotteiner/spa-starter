@@ -1,5 +1,5 @@
 import { Button, FormField, ThemeToggle } from '@mattgotteiner/spa-ui-controls'
-import { ACCENT_PRESETS, type AppSettings } from '../../types'
+import { type AppSettings } from '../../types'
 import './SettingsPanel.css'
 
 interface SettingsPanelProps {
@@ -17,6 +17,10 @@ export function SettingsPanel({
     <div className="settings-panel">
       <section className="settings-section">
         <h3 className="settings-section__title">Appearance</h3>
+        <p className="settings-section__notice">
+          Keep appearance settings wired through `@mattgotteiner/spa-ui-controls` so the app uses
+          the shared color scheme and theme primitives.
+        </p>
 
         <div className="settings-field">
           <span className="settings-field__label">Theme</span>
@@ -39,27 +43,6 @@ export function SettingsPanel({
             value={settings.appTitle}
             onChange={(event) => onUpdate({ appTitle: event.target.value })}
           />
-        </FormField>
-
-        <FormField
-          hint="Example select input. Replace this with whatever enum-like option your app actually needs."
-          htmlFor="settings-accent-preset"
-          label="Accent preset"
-        >
-          <select
-            id="settings-accent-preset"
-            className="settings-panel__control"
-            value={settings.accentPreset}
-            onChange={(event) =>
-              onUpdate({ accentPreset: event.target.value as AppSettings['accentPreset'] })
-            }
-          >
-            {ACCENT_PRESETS.map((preset) => (
-              <option key={preset} value={preset}>
-                {preset}
-              </option>
-            ))}
-          </select>
         </FormField>
 
         <label className="settings-checkbox">
