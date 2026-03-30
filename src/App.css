@@ -9,6 +9,28 @@
   margin: 0;
 }
 
+.app-subtitle-row {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.app-subtitle-link {
+  align-items: center;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+@media (hover: hover) {
+  .app-subtitle-link:hover {
+    color: var(--color-text);
+  }
+}
+
 .app-layout {
   display: grid;
   gap: 1rem;
@@ -112,5 +134,9 @@
 @media (max-width: 600px) {
   .app-title-block h1 {
     font-size: 1rem;
+  }
+
+  .app-subtitle-row {
+    gap: 0.35rem;
   }
 }
